@@ -28,7 +28,7 @@ export const Section = ({ name, description, language }: SectionProps) => {
     >
       <div
         className={`${
-          hasBeenVisible ? "show" : "hiden"
+          hasBeenVisible ? "animate-slide-in-from-left" : "opacity-0"
         } flex flex-col items-center justify-center`}
       >
         <h2 className="inline-flex">{name}</h2>

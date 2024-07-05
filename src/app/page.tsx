@@ -1,4 +1,4 @@
-import { Avatar } from "@/components/Imagem";
+import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 
 export default async function Home() {
@@ -9,9 +9,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="w-full flex items-center bg-[#DDDFDE] justify-center">
-        <Avatar />
-      </div>
+      <Hero />
       {repositories.map((repo: any) => (
         <Section
           key={repo.id}

@@ -5,20 +5,11 @@
 :root {
   --color-primary: #e53939;
   --color-text: #ffffff;
-  --color-background: #000000;
+  --color-background: #111111;
+  --color-bg-hero: #DDDFDE;
 }
 
 html,
 body {
-    @apply bg-background text-text w-screen h-screen overflow-x-hidden
+  @apply bg-background text-text w-screen h-screen overflow-x-hidden;
 }
-
-
-.hiden { 
-  @apply opacity-0 blur-lg transition-all duration-1000 -translate-x-full
-}
-
-.show {
-  @apply opacity-100 blur-0 transition-all duration-1000 translate-x-0
-}
-
