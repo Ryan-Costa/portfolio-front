@@ -6,6 +6,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "var(--color-primary)",
+        "primary-rgba": "var(--color-primary-rgba)",
         text: "var(--color-text)",
         background: "var(--color-background)",
         "bg-hero": "var(--color-bg-hero)",
