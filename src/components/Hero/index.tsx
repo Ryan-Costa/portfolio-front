@@ -11,7 +11,12 @@ export const Hero = () => {
             <span>Ryan Costa</span>
           </h1>
         </div>
-        <Image src="/image.png" alt="image Ryan" width={550} height={550} />
+        <Image
+          src="https://iili.io/dKmV8U7.png"
+          alt="Hero Ryan"
+          width={550}
+          height={550}
+        />
       </div>
     </>
   );
