@@ -1,18 +1,19 @@
 import { Hero } from "@/components/Hero";
-import ImageToVideo from "@/components/ImageToVideo";
+import { Info } from "@/components/Info";
 import { Section } from "@/components/Section";
-import Image from "next/image";
 
 interface DataProps {
   name: string;
-  description: string;
+  firstText: string;
+  secondText: string;
   imageUrl: string;
   videoUrl: string | undefined;
+  images: string[];
 }
 [];
 
 export default async function Home() {
-  const response = await fetch("http://localhost:3000/api/data");
+  const response = await fetch("http://localhost:3001/data");
   const data = await response.json();
 
   if (!data) throw new Error("Erro ao trazer os dados.");
@@ -20,15 +21,18 @@ export default async function Home() {
   return (
     <>
       <Hero />
-
+      <Info />
       {data.map((data: DataProps, index: number) => (
         <Section
           key={data.name}
           name={data.name}
           imageUrl={data.imageUrl}
           videoUrl={data.videoUrl}
-          description={data.description}
+          firstText={data.firstText}
+          secondText={data.secondText}
+          images={data.images}
           invert={index % 2 !== 0}
+          originalAnimation={index % 2 !== 0}
         />
       ))}
     </>

@@ -6,16 +6,31 @@ import React, { useState } from "react";
 interface ImageToVideoProps {
   imageUrl: string;
   videoUrl?: string;
+  hasBeenVisible: boolean;
+  originalAnimation: boolean;
 }
 
-const ImageToVideo = ({ imageUrl, videoUrl }: ImageToVideoProps) => {
+const ImageToVideo = ({
+  imageUrl,
+  videoUrl,
+  hasBeenVisible,
+  originalAnimation,
+}: ImageToVideoProps) => {
   const [hover, setHover] = useState(false);
 
   return (
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className="w-full h-full object-cover"
+      className={`${
+        hasBeenVisible
+          ? `${
+              originalAnimation
+                ? "animate-slide-in-from-left"
+                : "animate-slide-in-from-right"
+            }`
+          : "opacity-0"
+      } object-cover w-full h-[35rem] min-w-[40rem] rounded-lg z-10 overflow-hidden`}
     >
       {videoUrl ? (
         hover ? (

@@ -12,12 +12,29 @@ const config: Config = {
         "bg-hero": "var(--color-bg-hero)",
       },
       transitionDuration: {
-        "2000": "2000ms", // Adiciona uma duração de transição de 2 segundos
+        "2000": "2000ms",
+      },
+      animationDelay: {
+        "1600": "4000ms",
       },
       keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
         slideInFromLeft: {
           "0%": {
-            transform: "translateX(-100%)", // Certifique-se que está em minúsculas e correto
+            transform: "translateX(-100%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
+        slideInFromRight: {
+          "0%": {
+            transform: "translateX(100%)",
             opacity: "0",
           },
           "100%": {
@@ -27,10 +44,12 @@ const config: Config = {
         },
       },
       animation: {
+        "fade-in": "fadeIn 1s ease-out",
         "slide-in-from-left": "slideInFromLeft 2s forwards",
+        "slide-in-from-right": "slideInFromRight 2s forwards",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animation-delay")],
 };
 export default config;
