@@ -10,8 +10,8 @@ export const Title = () => {
   useEffect(() => {
     const typed = new Typed(".auto-type", {
       strings: ["Ryan Costa", "Front-end Developer", "Software Engineer"],
-      typeSpeed: 150,
-      backSpeed: 150,
+      typeSpeed: 100,
+      backSpeed: 50,
       loop: true,
     });
 
