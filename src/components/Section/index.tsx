@@ -76,14 +76,14 @@ export const Section = ({
                     width={100}
                     height={100}
                     className={`${
-                      setTimeout(() => {
-                        hasBeenVisible;
-                      })
-                        ? "animate-slide-in-from-left"
+                      // setTimeout(() => {
+                      hasBeenVisible
+                        ? // }, 5700)
+                          "animate-slide-in-from-left"
                         : "opacity-0"
                     }`}
                     style={{
-                      animationDelay: `${Math.min(300 * index, 900)}ms`,
+                      animationDelay: `${Math.min(100 * index, 350)}ms`,
                     }}
                   />
                 ))}

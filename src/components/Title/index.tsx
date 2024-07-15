@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
 export const Title = () => {
   const ref = useRef(null);
-  const [opened, setOpened] = useState(false);
 
   useEffect(() => {
     const typed = new Typed(".auto-type", {
@@ -23,7 +22,7 @@ export const Title = () => {
   return (
     <div className="w-[42.5rem]">
       <div>
-        <h1 className="text-7xl text-black font-bold">
+        <h1 className="text-6xl text-black font-bold xl:text-7xl">
           Hi, I&apos;m
           <br />
           <span ref={ref} className="auto-type text-primary">
